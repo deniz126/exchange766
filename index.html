@@ -17,7 +17,8 @@
     </script>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <!-- Bootstrap 4 + Font Awesome loaded from CDN so the page never depends on local vendor/css paths -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css">
@@ -48,9 +49,14 @@
             --ramzino-glass-border: rgba(255, 255, 255, .08);
         }
 
-        * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+        }
 
-        html, body { transition: background-color .25s ease, color .25s ease; }
+        html,
+        body {
+            transition: background-color .25s ease, color .25s ease;
+        }
 
         body {
             font-family: 'Vazirmatn', 'Nunito', Tahoma, sans-serif;
@@ -70,6 +76,7 @@
             flex-direction: column;
             transition: background .25s ease;
         }
+
         [data-theme="dark"] .ramzino-app-bg {
             background:
                 radial-gradient(circle at 12% 8%, rgba(108, 92, 231, .22) 0%, transparent 38%),
@@ -77,6 +84,7 @@
                 radial-gradient(circle at 80% 95%, rgba(108, 92, 231, .16) 0%, transparent 45%),
                 linear-gradient(180deg, #14151c 0%, #0f1015 100%);
         }
+
         [data-theme="dark"] .card,
         [data-theme="dark"] .card-header,
         [data-theme="dark"] .ramzino-coin-card,
@@ -87,56 +95,134 @@
             color: var(--ramzino-ink);
             border-color: var(--ramzino-hairline) !important;
         }
-        [data-theme="dark"] .ramzino-coin-toggle { background: #14151c; }
-        [data-theme="dark"] .ramzino-coin-toggle button.ramzino-active { background: #262735; color: var(--ramzino-ink); }
-        [data-theme="dark"] .ramzino-glassnav-search { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.08); }
-        [data-theme="dark"] .ramzino-glassnav-search input { color: var(--ramzino-ink); }
-        [data-theme="dark"] .ramzino-glassnav-search input::placeholder { color: var(--ramzino-ink-soft); }
-        [data-theme="dark"] .ramzino-navicon { background: rgba(255,255,255,.06); color: var(--ramzino-ink); }
-        [data-theme="dark"] .dropdown-item { color: var(--ramzino-ink); }
-        [data-theme="dark"] .dropdown-item:hover { background: rgba(255,255,255,.06); color: var(--ramzino-ink); }
-        [data-theme="dark"] .text-gray-800 { color: var(--ramzino-ink) !important; }
+
+        [data-theme="dark"] .ramzino-coin-toggle {
+            background: #14151c;
+        }
+
+        [data-theme="dark"] .ramzino-coin-toggle button.ramzino-active {
+            background: #262735;
+            color: var(--ramzino-ink);
+        }
+
+        [data-theme="dark"] .ramzino-glassnav-search {
+            background: rgba(255, 255, 255, .06);
+            border-color: rgba(255, 255, 255, .08);
+        }
+
+        [data-theme="dark"] .ramzino-glassnav-search input {
+            color: var(--ramzino-ink);
+        }
+
+        [data-theme="dark"] .ramzino-glassnav-search input::placeholder {
+            color: var(--ramzino-ink-soft);
+        }
+
+        [data-theme="dark"] .ramzino-navicon {
+            background: rgba(255, 255, 255, .06);
+            color: var(--ramzino-ink);
+        }
+
+        [data-theme="dark"] .dropdown-item {
+            color: var(--ramzino-ink);
+        }
+
+        [data-theme="dark"] .dropdown-item:hover {
+            background: rgba(255, 255, 255, .06);
+            color: var(--ramzino-ink);
+        }
+
+        [data-theme="dark"] .text-gray-800 {
+            color: var(--ramzino-ink) !important;
+        }
+
         [data-theme="dark"] .text-gray-500,
-        [data-theme="dark"] .text-gray-400 { color: var(--ramzino-ink-soft) !important; }
+        [data-theme="dark"] .text-gray-400 {
+            color: var(--ramzino-ink-soft) !important;
+        }
+
         [data-theme="dark"] .ramzino-coin-table thead th,
         [data-theme="dark"] .ramzino-coin-table tbody td,
-        [data-theme="dark"] .dropdown-divider { border-color: var(--ramzino-hairline) !important; }
-        [data-theme="dark"] .progress { background-color: rgba(255,255,255,.08); }
-        [data-theme="dark"] .ramzino-glassfooter { background: var(--ramzino-glass-bg); }
-        [data-theme="dark"] .ramzino-glassfooter-social a { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.08); color: var(--ramzino-ink); }
-        [data-theme="dark"] .ramzino-faq-trigger { background: transparent; }
-        [data-theme="dark"] #ramzinoThemeIcon:before { content: "\f185"; } /* fa-sun */
+        [data-theme="dark"] .dropdown-divider {
+            border-color: var(--ramzino-hairline) !important;
+        }
+
+        [data-theme="dark"] .progress {
+            background-color: rgba(255, 255, 255, .08);
+        }
+
+        [data-theme="dark"] .ramzino-glassfooter {
+            background: var(--ramzino-glass-bg);
+        }
+
+        [data-theme="dark"] .ramzino-glassfooter-social a {
+            background: rgba(255, 255, 255, .06);
+            border-color: rgba(255, 255, 255, .08);
+            color: var(--ramzino-ink);
+        }
+
+        [data-theme="dark"] .ramzino-faq-trigger {
+            background: transparent;
+        }
+
+        [data-theme="dark"] #ramzinoThemeIcon:before {
+            content: "\f185";
+        }
+
+        /* fa-sun */
 
         /* navbar circular icon buttons (login / theme / ai chat) */
         .ramzino-navicon {
-            width: 38px; height: 38px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            background: rgba(17,19,24,.05); border: none;
-            color: var(--ramzino-ink); font-size: 15px; text-decoration: none;
-            cursor: pointer; transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(17, 19, 24, .05);
+            border: none;
+            color: var(--ramzino-ink);
+            font-size: 15px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
         }
+
         .ramzino-navicon:hover {
             transform: translateY(-2px) scale(1.05);
             background: var(--ramzino-violet-tint);
             color: var(--ramzino-violet);
-            box-shadow: 0 6px 16px rgba(108,92,231,.25);
+            box-shadow: 0 6px 16px rgba(108, 92, 231, .25);
             text-decoration: none;
         }
+
         .ramzino-navicon-ai {
-            background: linear-gradient(135deg, rgba(108,92,231,.15), rgba(22,163,74,.15));
+            background: linear-gradient(135deg, rgba(108, 92, 231, .15), rgba(22, 163, 74, .15));
             position: relative;
             overflow: hidden;
         }
+
         .ramzino-navicon-ai::after {
             content: "";
-            position: absolute; inset: 0; border-radius: 50%;
-            box-shadow: 0 0 0 0 rgba(108,92,231,.45);
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            box-shadow: 0 0 0 0 rgba(108, 92, 231, .45);
             animation: ramzinoAiPulse 2.4s ease-out infinite;
         }
+
         @keyframes ramzinoAiPulse {
-            0%   { box-shadow: 0 0 0 0 rgba(108,92,231,.35); }
-            70%  { box-shadow: 0 0 0 10px rgba(108,92,231,0); }
-            100% { box-shadow: 0 0 0 0 rgba(108,92,231,0); }
+            0% {
+                box-shadow: 0 0 0 0 rgba(108, 92, 231, .35);
+            }
+
+            70% {
+                box-shadow: 0 0 0 10px rgba(108, 92, 231, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(108, 92, 231, 0);
+            }
         }
 
         /* ============================================================
@@ -144,182 +230,817 @@
            (these are custom classes the original template relied on —
            written out here so the page never depends on an external css file)
            ============================================================ */
-        .border-left-primary { border-right: .25rem solid #4e73df !important; }
-        .border-left-success { border-right: .25rem solid #1cc88a !important; }
-        .border-left-info    { border-right: .25rem solid #36b9cc !important; }
-        .border-left-warning { border-right: .25rem solid #f6c23e !important; }
-        .border-left-danger  { border-right: .25rem solid #e74a3b !important; }
+        .border-left-primary {
+            border-right: .25rem solid #4e73df !important;
+        }
+
+        .border-left-success {
+            border-right: .25rem solid #1cc88a !important;
+        }
+
+        .border-left-info {
+            border-right: .25rem solid #36b9cc !important;
+        }
+
+        .border-left-warning {
+            border-right: .25rem solid #f6c23e !important;
+        }
+
+        .border-left-danger {
+            border-right: .25rem solid #e74a3b !important;
+        }
+
         [dir="rtl"] .card.border-left-primary,
         [dir="rtl"] .card.border-left-success,
         [dir="rtl"] .card.border-left-info,
         [dir="rtl"] .card.border-left-warning,
-        [dir="rtl"] .card.border-left-danger { border-left: none !important; }
-
-        .text-gray-300 { color: #dddfeb !important; }
-        .text-gray-400 { color: #d1d3e2 !important; }
-        .text-gray-500 { color: #b7b9cc !important; }
-        .text-gray-800 { color: #5a5c69 !important; }
-        .text-xs { font-size: .7rem; }
-
-        .icon-circle {
-            height: 2.5rem; width: 2.5rem; border-radius: 100%;
-            display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        [dir="rtl"] .card.border-left-danger {
+            border-left: none !important;
         }
 
-        .chart-area { position: relative; height: 320px; width: 100%; }
-        .chart-pie  { position: relative; height: 240px; width: 100%; }
+        .text-gray-300 {
+            color: #dddfeb !important;
+        }
+
+        .text-gray-400 {
+            color: #d1d3e2 !important;
+        }
+
+        .text-gray-500 {
+            color: #b7b9cc !important;
+        }
+
+        .text-gray-800 {
+            color: #5a5c69 !important;
+        }
+
+        .text-xs {
+            font-size: .7rem;
+        }
+
+        .icon-circle {
+            height: 2.5rem;
+            width: 2.5rem;
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .chart-area {
+            position: relative;
+            height: 320px;
+            width: 100%;
+        }
+
+        .chart-pie {
+            position: relative;
+            height: 240px;
+            width: 100%;
+        }
 
         .badge-counter {
-            position: absolute; transform: scale(.7); transform-origin: top left;
-            left: .25rem; margin-top: -.25rem;
+            position: absolute;
+            transform: scale(.7);
+            transform-origin: top left;
+            left: .25rem;
+            margin-top: -.25rem;
         }
 
         .status-indicator {
-            width: .65rem; height: .65rem; border-radius: 100%;
-            position: absolute; bottom: 0; left: 0; border: .125rem solid #fff; background: #dddfeb;
+            width: .65rem;
+            height: .65rem;
+            border-radius: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border: .125rem solid #fff;
+            background: #dddfeb;
         }
 
-        .dropdown-list-image { position: relative; height: 2.5rem; width: 2.5rem; flex-shrink: 0; }
+        .dropdown-list-image {
+            position: relative;
+            height: 2.5rem;
+            width: 2.5rem;
+            flex-shrink: 0;
+        }
 
         .ramzino-avatar-circle {
-            height: 2.5rem; width: 2.5rem; border-radius: 50%;
-            background: var(--ramzino-violet-tint); color: var(--ramzino-violet);
-            display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px;
+            height: 2.5rem;
+            width: 2.5rem;
+            border-radius: 50%;
+            background: var(--ramzino-violet-tint);
+            color: var(--ramzino-violet);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
         }
 
         @keyframes ramzinoGrowIn {
-            0%   { transform: scale(.9); opacity: 0; }
-            100% { transform: scale(1);  opacity: 1; }
+            0% {
+                transform: scale(.9);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
-        .animated--grow-in { animation: ramzinoGrowIn .2s ease-out; }
-        .animated--fade-in { animation: ramzinoGrowIn .15s ease-out; }
+
+        .animated--grow-in {
+            animation: ramzinoGrowIn .2s ease-out;
+        }
+
+        .animated--fade-in {
+            animation: ramzinoGrowIn .15s ease-out;
+        }
 
         .scroll-to-top {
-            position: fixed; right: auto; left: 1rem; bottom: 1rem;
-            display: none; width: 2.75rem; height: 2.75rem;
-            text-align: center; color: #fff; background: rgba(20, 20, 40, .55);
-            line-height: 2.75rem; border-radius: .5rem; z-index: 1040;
+            position: fixed;
+            right: auto;
+            left: 1rem;
+            bottom: 1rem;
+            display: none;
+            width: 2.75rem;
+            height: 2.75rem;
+            text-align: center;
+            color: #fff;
+            background: rgba(20, 20, 40, .55);
+            line-height: 2.75rem;
+            border-radius: .5rem;
+            z-index: 1040;
         }
-        .scroll-to-top:hover { background: var(--ramzino-violet); color: #fff; }
 
-        .card { border: none; border-radius: 14px; }
-        .card-header { background: #fff; border-bottom: 1px solid var(--ramzino-hairline); border-radius: 14px 14px 0 0 !important; }
-        .shadow { box-shadow: 0 .3rem 1.2rem rgba(20, 20, 40, .08) !important; }
-        .shadow-sm { box-shadow: 0 .15rem .5rem rgba(20, 20, 40, .06) !important; }
+        .scroll-to-top:hover {
+            background: var(--ramzino-violet);
+            color: #fff;
+        }
 
-        .progress-sm { height: .5rem; }
+        .card {
+            border: none;
+            border-radius: 14px;
+        }
+
+        .card-header {
+            background: #fff;
+            border-bottom: 1px solid var(--ramzino-hairline);
+            border-radius: 14px 14px 0 0 !important;
+        }
+
+        .shadow {
+            box-shadow: 0 .3rem 1.2rem rgba(20, 20, 40, .08) !important;
+        }
+
+        .shadow-sm {
+            box-shadow: 0 .15rem .5rem rgba(20, 20, 40, .06) !important;
+        }
+
+        .progress-sm {
+            height: .5rem;
+        }
 
         /* ============================================================
            GLASS NAVBAR
            ============================================================ */
         .ramzino-glassnav-wrap {
-            position: sticky; top: 16px; z-index: 1030;
-            display: flex; justify-content: center; padding: 0 16px; margin-bottom: 28px;
+            position: sticky;
+            top: 16px;
+          
+          
+            padding: 0 16px;
+            margin-bottom: 28px;
         }
-        .ramzino-glassnav {
-            width: 100%; max-width: 1320px;
-            background: var(--ramzino-glass-bg); border: 1px solid var(--ramzino-glass-border);
-            -webkit-backdrop-filter: blur(18px) saturate(160%); backdrop-filter: blur(18px) saturate(160%);
-            border-radius: 20px; box-shadow: 0 12px 34px rgba(20, 20, 40, .10), 0 2px 8px rgba(20, 20, 40, .05);
-            padding: 10px 18px; display: flex; align-items: center; gap: 18px;
-        }
-        .ramzino-glassnav-brand { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 19px; color: var(--ramzino-ink); text-decoration: none; flex-shrink: 0; }
-        .ramzino-glassnav-brand:hover { color: var(--ramzino-ink); text-decoration: none; }
-        .ramzino-glassnav-brand-icon { width: 34px; height: 34px; border-radius: 10px; background: var(--ramzino-violet); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
-        .ramzino-glassnav-search { flex: 1; display: flex; align-items: center; gap: 10px; background: rgba(255, 255, 255, .65); border: 1px solid rgba(17, 19, 24, .06); border-radius: 12px; padding: 9px 14px; max-width: 360px; }
-        .ramzino-glassnav-search i { color: var(--ramzino-ink-soft); font-size: 13px; }
-        .ramzino-glassnav-search input { border: none; background: transparent; outline: none; font-family: inherit; font-size: 14px; width: 100%; color: var(--ramzino-ink); }
-        .ramzino-glassnav-actions { display: flex; align-items: center; gap: 4px; margin-right: auto; margin-bottom: 0; }
-        .ramzino-glassnav-actions .nav-link { color: var(--ramzino-ink) !important; padding: 8px 10px; border-radius: 10px; transition: background .15s ease; position: relative; }
-        .ramzino-glassnav-actions .nav-link:hover { background: rgba(17, 19, 24, .05); }
-        .ramzino-glassnav-divider { width: 1px; height: 26px; background: rgba(17, 19, 24, .10); margin: 0 6px; }
-        .ramzino-glassnav-user-name { font-size: 13.5px; color: var(--ramzino-ink-soft); }
-        @media (max-width: 768px) { .ramzino-glassnav-search { display: none !important; } }
-        @media (max-width: 560px) { .ramzino-glassnav-brand-text { display: none; } }
 
+        .ramzino-glassnav {
+            width: 100%;
+            max-width: 1320px;
+            background: var(--ramzino-glass-bg);
+            border: 1px solid var(--ramzino-glass-border);
+            -webkit-backdrop-filter: blur(18px) saturate(160%);
+            backdrop-filter: blur(18px) saturate(160%);
+            border-radius: 20px;
+            box-shadow: 0 12px 34px rgba(20, 20, 40, .10), 0 2px 8px rgba(20, 20, 40, .05);
+            padding: 10px 18px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .ramzino-glassnav-brand {
+           
+          
+            
+            font-weight: 800;
+            font-size: 19px;
+            color: var(--ramzino-ink);
+            
+        }
+
+        .ramzino-glassnav-brand:hover {
+            color: var(--ramzino-ink);
+            text-decoration: none;
+        }
+
+        .ramzino-glassnav-brand-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            background: var(--ramzino-violet);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            flex-shrink: 0;
+        }
+
+        .ramzino-glassnav-search {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, .65);
+            border: 1px solid rgba(17, 19, 24, .06);
+            border-radius: 12px;
+            padding: 9px 14px;
+            max-width: 360px;
+        }
+
+        .ramzino-glassnav-search i {
+            color: var(--ramzino-ink-soft);
+            font-size: 13px;
+        }
+
+        .ramzino-glassnav-search input {
+            border: none;
+            background: transparent;
+            outline: none;
+            font-family: inherit;
+            font-size: 14px;
+            width: 100%;
+            color: var(--ramzino-ink);
+        }
+
+        .ramzino-glassnav-actions {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-right: auto;
+            margin-bottom: 0;
+        }
+
+        .ramzino-glassnav-actions .nav-link {
+            color: var(--ramzino-ink) !important;
+            padding: 8px 10px;
+            border-radius: 10px;
+            transition: background .15s ease;
+            position: relative;
+        }
+
+        .ramzino-glassnav-actions .nav-link:hover {
+            background: rgba(17, 19, 24, .05);
+        }
+
+        .ramzino-glassnav-divider {
+            width: 1px;
+            height: 26px;
+            background: rgba(17, 19, 24, .10);
+            margin: 0 6px;
+        }
+
+        .ramzino-glassnav-user-name {
+            font-size: 13.5px;
+            color: var(--ramzino-ink-soft);
+        }
+
+  
+
+  
         /* ============================================================
            MAIN CONTENT LAYOUT
            ============================================================ */
-        .ramzino-main { flex: 1; padding-bottom: 40px; }
-        .ramzino-main-container { max-width: 1320px; margin: 0 auto; padding: 0 16px; }
-        .ramzino-page-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; }
-        .ramzino-section-title { font-size: 22px; font-weight: 800; margin: 0; }
-        .ramzino-main-container .row { margin-left: -12px; margin-right: -12px; }
-        .ramzino-main-container .row > [class*="col-"] { padding-left: 12px; padding-right: 12px; }
+        .ramzino-main {
+            flex: 1;
+            padding-bottom: 40px;
+        }
+
+        .ramzino-main-container {
+            max-width: 1320px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .ramzino-page-heading {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 22px;
+        }
+
+        .ramzino-section-title {
+            font-size: 22px;
+            font-weight: 800;
+            margin: 0;
+        }
+
+        .ramzino-main-container .row {
+            margin-left: -12px;
+            margin-right: -12px;
+        }
+
+        .ramzino-main-container .row>[class*="col-"] {
+            padding-left: 12px;
+            padding-right: 12px;
+        }
 
         /* ============================================================
            COIN LIST CARD
            ============================================================ */
-        .ramzino-coin-card { background: #fff; border-radius: 22px; box-shadow: 0 20px 50px rgba(20, 20, 40, .10), 0 4px 12px rgba(20, 20, 40, .05); padding: 26px 22px 30px; margin-bottom: 24px; }
-        .ramzino-coin-header { position: relative; display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 6px; }
-        .ramzino-coin-title { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 22px; font-weight: 800; margin: 0; white-space: nowrap; }
-        .ramzino-coin-toggle { display: inline-flex; background: #f2f3f5; border-radius: 10px; padding: 4px; gap: 2px; z-index: 1; }
-        .ramzino-coin-toggle button { border: none; background: transparent; padding: 8px 18px; font-family: inherit; font-size: 13.5px; font-weight: 600; color: var(--ramzino-ink-soft); border-radius: 8px; cursor: pointer; transition: background .15s ease, color .15s ease, box-shadow .15s ease; }
-        .ramzino-coin-toggle button.ramzino-active { background: #fff; color: var(--ramzino-ink); box-shadow: 0 1px 3px rgba(0, 0, 0, .08); }
-        .ramzino-coin-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 14px; }
-        .ramzino-coin-table { width: 100%; border-collapse: collapse; min-width: 720px; }
-        .ramzino-coin-table thead th { text-align: right; font-size: 13px; font-weight: 500; color: var(--ramzino-ink-soft); padding: 10px; border-bottom: 1px solid var(--ramzino-hairline); white-space: nowrap; }
-        .ramzino-coin-table thead th.ramzino-col-name { text-align: left; }
-        .ramzino-coin-table thead th.ramzino-col-action { width: 170px; }
-        .ramzino-coin-table tbody td { padding: 14px 10px; border-bottom: 1px solid var(--ramzino-hairline); vertical-align: middle; font-size: 15px; }
-        .ramzino-coin-table tbody tr:last-child td { border-bottom: none; }
-        .ramzino-coin-row-enter { animation: ramzinoRowIn .35s ease forwards; opacity: 0; }
-        @keyframes ramzinoRowIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
-        .ramzino-coin-trade-btn { width: 100%; padding: 11px 14px; border: 1px solid #e5e7eb; background: #fff; border-radius: 10px; font-family: inherit; font-size: 13.5px; font-weight: 500; color: var(--ramzino-ink); cursor: pointer; transition: border-color .15s ease, background .15s ease; white-space: nowrap; }
-        .ramzino-coin-trade-btn:hover { border-color: var(--ramzino-violet); background: var(--ramzino-violet-tint); }
-        .ramzino-coin-change { font-weight: 600; font-size: 15px; font-variant-numeric: tabular-nums; white-space: nowrap; }
-        .ramzino-coin-change.ramzino-up { color: var(--ramzino-green); }
-        .ramzino-coin-change.ramzino-down { color: var(--ramzino-red); }
-        .ramzino-coin-price { font-variant-numeric: tabular-nums; letter-spacing: .2px; white-space: nowrap; }
-        .ramzino-coin-price .ramzino-coin-currency { color: var(--ramzino-ink-soft); font-size: 13px; margin-left: 4px; }
-        .ramzino-coin-name-cell { display: flex; align-items: center; justify-content: flex-end; gap: 10px; }
-        .ramzino-coin-name-text { font-weight: 600; font-size: 15px; white-space: nowrap; }
-        .ramzino-coin-symbol { color: var(--ramzino-ink-soft); font-weight: 400; }
-        .ramzino-coin-icon { width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: #fff; font-size: 14px; font-weight: 700; }
-        .ramzino-coin-viewall-wrap { display: flex; justify-content: center; margin-top: 22px; }
-        .ramzino-coin-viewall-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 28px; border-radius: 12px; border: 1px solid var(--ramzino-violet); background: var(--ramzino-violet-tint); color: var(--ramzino-violet); font-family: inherit; font-size: 14.5px; font-weight: 600; cursor: pointer; transition: background .15s ease; }
-        .ramzino-coin-viewall-btn:hover { background: var(--ramzino-violet); color: #fff; }
-        .ramzino-coin-viewall-btn svg { transition: transform .2s ease; }
-        .ramzino-coin-viewall-btn.ramzino-open svg { transform: rotate(180deg); }
+        .ramzino-coin-card {
+            background: #fff;
+            border-radius: 22px;
+            box-shadow: 0 20px 50px rgba(20, 20, 40, .10), 0 4px 12px rgba(20, 20, 40, .05);
+            padding: 26px 22px 30px;
+            margin-bottom: 24px;
+        }
+
+        .ramzino-coin-header {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 6px;
+        }
+
+        .ramzino-coin-title {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 22px;
+            font-weight: 800;
+            margin: 0;
+            white-space: nowrap;
+        }
+
+        .ramzino-coin-toggle {
+            display: inline-flex;
+            background: #f2f3f5;
+            border-radius: 10px;
+            padding: 4px;
+            gap: 2px;
+            z-index: 1;
+        }
+
+        .ramzino-coin-toggle button {
+            border: none;
+            background: transparent;
+            padding: 8px 18px;
+            font-family: inherit;
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--ramzino-ink-soft);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background .15s ease, color .15s ease, box-shadow .15s ease;
+        }
+
+        .ramzino-coin-toggle button.ramzino-active {
+            background: #fff;
+            color: var(--ramzino-ink);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, .08);
+        }
+
+        .ramzino-coin-table-wrap {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-top: 14px;
+        }
+
+        .ramzino-coin-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 720px;
+        }
+
+        .ramzino-coin-table thead th {
+            text-align: right;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--ramzino-ink-soft);
+            padding: 10px;
+            border-bottom: 1px solid var(--ramzino-hairline);
+            white-space: nowrap;
+        }
+
+        .ramzino-coin-table thead th.ramzino-col-name {
+            text-align: left;
+        }
+
+        .ramzino-coin-table thead th.ramzino-col-action {
+            width: 170px;
+        }
+
+        .ramzino-coin-table tbody td {
+            padding: 14px 10px;
+            border-bottom: 1px solid var(--ramzino-hairline);
+            vertical-align: middle;
+            font-size: 15px;
+        }
+
+        .ramzino-coin-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .ramzino-coin-row-enter {
+            animation: ramzinoRowIn .35s ease forwards;
+            opacity: 0;
+        }
+
+        @keyframes ramzinoRowIn {
+            from {
+                opacity: 0;
+                transform: translateY(6px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .ramzino-coin-trade-btn {
+            width: 100%;
+            padding: 11px 14px;
+            border: 1px solid #e5e7eb;
+            background: #fff;
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 13.5px;
+            font-weight: 500;
+            color: var(--ramzino-ink);
+            cursor: pointer;
+            transition: border-color .15s ease, background .15s ease;
+            white-space: nowrap;
+        }
+
+        .ramzino-coin-trade-btn:hover {
+            border-color: var(--ramzino-violet);
+            background: var(--ramzino-violet-tint);
+        }
+
+        .ramzino-coin-change {
+            font-weight: 600;
+            font-size: 15px;
+            font-variant-numeric: tabular-nums;
+            white-space: nowrap;
+        }
+
+        .ramzino-coin-change.ramzino-up {
+            color: var(--ramzino-green);
+        }
+
+        .ramzino-coin-change.ramzino-down {
+            color: var(--ramzino-red);
+        }
+
+        .ramzino-coin-price {
+            font-variant-numeric: tabular-nums;
+            letter-spacing: .2px;
+            white-space: nowrap;
+        }
+
+        .ramzino-coin-price .ramzino-coin-currency {
+            color: var(--ramzino-ink-soft);
+            font-size: 13px;
+            margin-left: 4px;
+        }
+
+        .ramzino-coin-name-cell {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 10px;
+        }
+
+        .ramzino-coin-name-text {
+            font-weight: 600;
+            font-size: 15px;
+            white-space: nowrap;
+        }
+
+        .ramzino-coin-symbol {
+            color: var(--ramzino-ink-soft);
+            font-weight: 400;
+        }
+
+        .ramzino-coin-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .ramzino-coin-viewall-wrap {
+            display: flex;
+            justify-content: center;
+            margin-top: 22px;
+        }
+
+        .ramzino-coin-viewall-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 28px;
+            border-radius: 12px;
+            border: 1px solid var(--ramzino-violet);
+            background: var(--ramzino-violet-tint);
+            color: var(--ramzino-violet);
+            font-family: inherit;
+            font-size: 14.5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background .15s ease;
+        }
+
+        .ramzino-coin-viewall-btn:hover {
+            background: var(--ramzino-violet);
+            color: #fff;
+        }
+
+        .ramzino-coin-viewall-btn svg {
+            transition: transform .2s ease;
+        }
+
+        .ramzino-coin-viewall-btn.ramzino-open svg {
+            transform: rotate(180deg);
+        }
 
         /* ============================================================
            FAQ CARD
            ============================================================ */
-        .ramzino-faq-panel { background: #fff; border-radius: 22px; box-shadow: 0 20px 50px rgba(20, 20, 40, .10), 0 4px 12px rgba(20, 20, 40, .05); padding: 26px 22px 30px; margin-bottom: 24px; }
-        .ramzino-faq-heading { text-align: center; font-size: 20px; font-weight: 800; margin: 0 0 6px; }
-        .ramzino-faq-tagline { text-align: center; font-size: 13.5px; color: var(--ramzino-ink-soft); margin: 0 0 22px; }
-        .ramzino-faq-stack { display: flex; flex-direction: column; gap: 10px; }
-        .ramzino-faq-entry { border: 1px solid var(--ramzino-hairline); border-radius: 16px; overflow: hidden; transition: border-color .2s ease, box-shadow .2s ease; }
-        .ramzino-faq-entry.ramzino-is-expanded { border-color: var(--ramzino-violet); box-shadow: 0 6px 18px rgba(108, 92, 231, .10); }
-        .ramzino-faq-trigger { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 15px 16px; cursor: pointer; background: #fff; user-select: none; }
-        .ramzino-faq-entry.ramzino-is-expanded .ramzino-faq-trigger { background: var(--ramzino-violet-tint); }
-        .ramzino-faq-question-label { font-size: 14.5px; font-weight: 600; color: var(--ramzino-ink); text-align: right; flex: 1; }
-        .ramzino-faq-chevron { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--ramzino-violet-tint); display: flex; align-items: center; justify-content: center; color: var(--ramzino-violet); transition: transform .25s ease, background .2s ease, color .2s ease; }
-        .ramzino-faq-entry.ramzino-is-expanded .ramzino-faq-chevron { background: var(--ramzino-violet); color: #fff; transform: rotate(180deg); }
-        .ramzino-faq-collapse { max-height: 0; overflow: hidden; transition: max-height .28s ease; }
-        .ramzino-faq-answer-text { padding: 0 16px 16px; font-size: 13.5px; line-height: 1.9; color: var(--ramzino-ink-soft); }
+        .ramzino-faq-panel {
+            background: #fff;
+            border-radius: 22px;
+            box-shadow: 0 20px 50px rgba(20, 20, 40, .10), 0 4px 12px rgba(20, 20, 40, .05);
+            padding: 26px 22px 30px;
+            margin-bottom: 24px;
+        }
+
+        .ramzino-faq-heading {
+            text-align: center;
+            font-size: 20px;
+            font-weight: 800;
+            margin: 0 0 6px;
+        }
+
+        .ramzino-faq-tagline {
+            text-align: center;
+            font-size: 13.5px;
+            color: var(--ramzino-ink-soft);
+            margin: 0 0 22px;
+        }
+
+        .ramzino-faq-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .ramzino-faq-entry {
+            border: 1px solid var(--ramzino-hairline);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: border-color .2s ease, box-shadow .2s ease;
+        }
+
+        .ramzino-faq-entry.ramzino-is-expanded {
+            border-color: var(--ramzino-violet);
+            box-shadow: 0 6px 18px rgba(108, 92, 231, .10);
+        }
+
+        .ramzino-faq-trigger {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            padding: 15px 16px;
+            cursor: pointer;
+            background: #fff;
+            user-select: none;
+        }
+
+        .ramzino-faq-entry.ramzino-is-expanded .ramzino-faq-trigger {
+            background: var(--ramzino-violet-tint);
+        }
+
+        .ramzino-faq-question-label {
+            font-size: 14.5px;
+            font-weight: 600;
+            color: var(--ramzino-ink);
+            text-align: right;
+            flex: 1;
+        }
+
+        .ramzino-faq-chevron {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--ramzino-violet-tint);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ramzino-violet);
+            transition: transform .25s ease, background .2s ease, color .2s ease;
+        }
+
+        .ramzino-faq-entry.ramzino-is-expanded .ramzino-faq-chevron {
+            background: var(--ramzino-violet);
+            color: #fff;
+            transform: rotate(180deg);
+        }
+
+        .ramzino-faq-collapse {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .28s ease;
+        }
+
+        .ramzino-faq-answer-text {
+            padding: 0 16px 16px;
+            font-size: 13.5px;
+            line-height: 1.9;
+            color: var(--ramzino-ink-soft);
+        }
 
         /* ============================================================
            GLASS FOOTER
            ============================================================ */
-        .ramzino-glassfooter-wrap { display: flex; justify-content: center; padding: 0 16px 24px; }
-        .ramzino-glassfooter { width: 100%; max-width: 1320px; background: var(--ramzino-glass-bg); border: 1px solid var(--ramzino-glass-border); -webkit-backdrop-filter: blur(18px) saturate(160%); backdrop-filter: blur(18px) saturate(160%); border-radius: 24px; box-shadow: 0 12px 34px rgba(20, 20, 40, .10), 0 2px 8px rgba(20, 20, 40, .05); padding: 32px 30px 22px; }
-        .ramzino-glassfooter-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 26px; margin-bottom: 24px; }
-        .ramzino-glassfooter-col-title { font-size: 15px; font-weight: 700; margin: 0 0 14px; display: flex; align-items: center; gap: 8px; }
-        .ramzino-glassfooter-col-title i { color: var(--ramzino-violet); font-size: 14px; }
-        .ramzino-glassfooter-social { display: flex; gap: 10px; }
-        .ramzino-glassfooter-social a { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,.7); border: 1px solid rgba(17,19,24,.08); display: flex; align-items: center; justify-content: center; color: var(--ramzino-ink); text-decoration: none; transition: background .15s ease, color .15s ease; }
-        .ramzino-glassfooter-social a:hover { background: var(--ramzino-violet); color: #fff; }
-        .ramzino-glassfooter-item { display: flex; align-items: flex-start; gap: 10px; font-size: 13.5px; color: var(--ramzino-ink-soft); text-decoration: none; margin-bottom: 4px; line-height: 1.8; }
-        .ramzino-glassfooter-item i { color: var(--ramzino-violet); width: 16px; text-align: center; margin-top: 3px; flex-shrink: 0; }
-        a.ramzino-glassfooter-item:hover { color: var(--ramzino-violet); }
-        .ramzino-glassfooter-support-status { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--ramzino-green); font-weight: 600; margin-bottom: 10px; }
-        .ramzino-glassfooter-support-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ramzino-green); box-shadow: 0 0 0 3px rgba(22,163,74,.18); }
-        .ramzino-glassfooter-chat-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--ramzino-violet); color: #fff; border: none; border-radius: 10px; padding: 9px 16px; font-family: inherit; font-size: 13px; font-weight: 600; cursor: pointer; transition: background .15s ease; }
-        .ramzino-glassfooter-chat-btn:hover { background: var(--ramzino-violet-dark); }
-        .ramzino-glassfooter-bottom { border-top: 1px solid rgba(17,19,24,.08); padding-top: 16px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; font-size: 12.5px; color: var(--ramzino-ink-soft); }
-        @media (max-width: 900px) { .ramzino-glassfooter-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 520px) { .ramzino-glassfooter-grid { grid-template-columns: 1fr; } .ramzino-glassfooter { border-radius: 20px; padding: 24px 18px 18px; } }
+        .ramzino-glassfooter-wrap {
+            display: flex;
+            justify-content: center;
+            padding: 0 16px 24px;
+        }
+
+        .ramzino-glassfooter {
+            width: 100%;
+            max-width: 1320px;
+            background: var(--ramzino-glass-bg);
+            border: 1px solid var(--ramzino-glass-border);
+            -webkit-backdrop-filter: blur(18px) saturate(160%);
+            backdrop-filter: blur(18px) saturate(160%);
+            border-radius: 24px;
+            box-shadow: 0 12px 34px rgba(20, 20, 40, .10), 0 2px 8px rgba(20, 20, 40, .05);
+            padding: 32px 30px 22px;
+        }
+
+        .ramzino-glassfooter-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 26px;
+            margin-bottom: 24px;
+        }
+
+        .ramzino-glassfooter-col-title {
+            font-size: 15px;
+            font-weight: 700;
+            margin: 0 0 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .ramzino-glassfooter-col-title i {
+            color: var(--ramzino-violet);
+            font-size: 14px;
+        }
+
+        .ramzino-glassfooter-social {
+            display: flex;
+            gap: 10px;
+        }
+
+        .ramzino-glassfooter-social a {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .7);
+            border: 1px solid rgba(17, 19, 24, .08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ramzino-ink);
+            text-decoration: none;
+            transition: background .15s ease, color .15s ease;
+        }
+
+        .ramzino-glassfooter-social a:hover {
+            background: var(--ramzino-violet);
+            color: #fff;
+        }
+
+        .ramzino-glassfooter-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 13.5px;
+            color: var(--ramzino-ink-soft);
+            text-decoration: none;
+            margin-bottom: 4px;
+            line-height: 1.8;
+        }
+
+        .ramzino-glassfooter-item i {
+            color: var(--ramzino-violet);
+            width: 16px;
+            text-align: center;
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+
+        a.ramzino-glassfooter-item:hover {
+            color: var(--ramzino-violet);
+        }
+
+        .ramzino-glassfooter-support-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12.5px;
+            color: var(--ramzino-green);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .ramzino-glassfooter-support-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--ramzino-green);
+            box-shadow: 0 0 0 3px rgba(22, 163, 74, .18);
+        }
+
+        .ramzino-glassfooter-chat-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--ramzino-violet);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 9px 16px;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background .15s ease;
+        }
+
+        .ramzino-glassfooter-chat-btn:hover {
+            background: var(--ramzino-violet-dark);
+        }
+
+        .ramzino-glassfooter-bottom {
+            border-top: 1px solid rgba(17, 19, 24, .08);
+            padding-top: 16px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 8px;
+            font-size: 12.5px;
+            color: var(--ramzino-ink-soft);
+        }
+
+        @media (max-width: 900px) {
+            .ramzino-glassfooter-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 520px) {
+            .ramzino-glassfooter-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ramzino-glassfooter {
+                border-radius: 20px;
+                padding: 24px 18px 18px;
+            }
+        }
     </style>
     <!-- =================== end Ramzino custom theme =================== -->
 
@@ -356,7 +1077,8 @@
 
                     <!-- Dark mode toggle -->
                     <li class="nav-item mx-1">
-                        <button type="button" class="ramzino-navicon" id="ramzinoThemeToggle" title="حالت شب/روز" onclick="ramzinoToggleTheme()">
+                        <button type="button" class="ramzino-navicon" id="ramzinoThemeToggle" title="حالت شب/روز"
+                            onclick="ramzinoToggleTheme()">
                             <i class="fas fa-moon" id="ramzinoThemeIcon"></i>
                         </button>
                     </li>
@@ -371,22 +1093,7 @@
                     <li class="ramzino-glassnav-divider d-none d-sm-block"></li>
 
                     <!-- User -->
-                    <li class="nav-item dropdown no-arrow">
-                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="ramzino-glassnav-user-name ml-2 d-none d-lg-inline">داوود محمدی</span>
-                            <span class="ramzino-avatar-circle">د</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                            <a class="dropdown-item" href="#"><i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>پروفایل</a>
-                            <a class="dropdown-item" href="#"><i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>تنظیمات</a>
-                            <a class="dropdown-item" href="#"><i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>تاریخچه فعالیت</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>خروج
-                            </a>
-                        </div>
-                    </li>
+
 
                 </ul>
 
@@ -414,7 +1121,8 @@
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">کاربران فعال</div>
+                                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">کاربران
+                                            فعال</div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">۲٬۴۵۶</div>
                                     </div>
                                     <div class="col-auto"><i class="fas fa-users fa-2x text-gray-300"></i></div>
@@ -428,7 +1136,8 @@
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">تغییرات امروز</div>
+                                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">تغییرات
+                                            امروز</div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">۱.۸٪</div>
                                     </div>
                                     <div class="col-auto"><i class="fas fa-chart-line fa-2x text-gray-300"></i></div>
@@ -442,12 +1151,17 @@
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">سرعت معاملات</div>
+                                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">سرعت معاملات
+                                        </div>
                                         <div class="row no-gutters align-items-center">
-                                            <div class="col-auto"><div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">۰.۳۲s</div></div>
+                                            <div class="col-auto">
+                                                <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">۰.۳۲s</div>
+                                            </div>
                                             <div class="col">
                                                 <div class="progress progress-sm mr-2">
-                                                    <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    <div class="progress-bar bg-info" role="progressbar"
+                                                        style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                                        aria-valuemax="100"></div>
                                                 </div>
                                             </div>
                                         </div>
@@ -463,7 +1177,8 @@
                             <div class="card-body">
                                 <div class="row no-gutters align-items-center">
                                     <div class="col mr-2">
-                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">تعداد ارزها</div>
+                                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">تعداد
+                                            ارزها</div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">۱۲۸</div>
                                     </div>
                                     <div class="col-auto"><i class="fas fa-coins fa-2x text-gray-300"></i></div>
@@ -501,7 +1216,10 @@
                     <div class="ramzino-coin-viewall-wrap">
                         <button class="ramzino-coin-viewall-btn" id="ramzinoViewAllBtn" type="button">
                             <span id="ramzinoViewAllLabel">مشاهده تمام رمزارزها</span>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
                         </button>
                     </div>
                 </div>
@@ -513,10 +1231,12 @@
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-primary">روند قیمت در هفت روز گذشته</h6>
                                 <div class="dropdown no-arrow">
-                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink1">
+                                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                        aria-labelledby="dropdownMenuLink1">
                                         <div class="dropdown-header">بازه زمانی</div>
                                         <a class="dropdown-item" href="#">ساعت ۲۴</a>
                                         <a class="dropdown-item" href="#">روز ۳۰</a>
@@ -536,10 +1256,12 @@
                             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                                 <h6 class="m-0 font-weight-bold text-primary">توزیع سبد سرمایه</h6>
                                 <div class="dropdown no-arrow">
-                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink2"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
                                     </a>
-                                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink2">
+                                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                        aria-labelledby="dropdownMenuLink2">
                                         <div class="dropdown-header">تنظیمات نمودار</div>
                                         <a class="dropdown-item" href="#">چاپ گزارش</a>
                                         <a class="dropdown-item" href="#">دانلود گزارش</a>
@@ -564,38 +1286,62 @@
                 <div class="row">
                     <div class="col-lg-6 mb-4">
                         <div class="card shadow mb-4">
-                            <div class="card-header py-3"><h6 class="m-0 font-weight-bold text-primary">بازده سبد سرمایه</h6></div>
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">بازده سبد سرمایه</h6>
+                            </div>
                             <div class="card-body">
                                 <h4 class="small font-weight-bold">فروردین <span class="float-right">۲۰٪</span></h4>
-                                <div class="progress mb-4"><div class="progress-bar bg-danger" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div></div>
+                                <div class="progress mb-4">
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 20%"
+                                        aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
 
                                 <h4 class="small font-weight-bold">اردیبهشت <span class="float-right">۴۰٪</span></h4>
-                                <div class="progress mb-4"><div class="progress-bar bg-warning" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div></div>
+                                <div class="progress mb-4">
+                                    <div class="progress-bar bg-warning" role="progressbar" style="width: 40%"
+                                        aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
 
                                 <h4 class="small font-weight-bold">تیر <span class="float-right">۶٪</span></h4>
-                                <div class="progress mb-4"><div class="progress-bar" role="progressbar" style="width: 6%" aria-valuenow="6" aria-valuemin="0" aria-valuemax="100"></div></div>
+                                <div class="progress mb-4">
+                                    <div class="progress-bar" role="progressbar" style="width: 6%" aria-valuenow="6"
+                                        aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
 
                                 <h4 class="small font-weight-bold">مرداد <span class="float-right">۱۸٪</span></h4>
-                                <div class="progress mb-4"><div class="progress-bar bg-info" role="progressbar" style="width: 18%" aria-valuenow="18" aria-valuemin="0" aria-valuemax="100"></div></div>
+                                <div class="progress mb-4">
+                                    <div class="progress-bar bg-info" role="progressbar" style="width: 18%"
+                                        aria-valuenow="18" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
 
                                 <h4 class="small font-weight-bold">سود کل <span class="float-right">۱۲.۸٪+</span></h4>
-                                <div class="progress"><div class="progress-bar bg-success" role="progressbar" style="width: 12%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div></div>
+                                <div class="progress">
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 12%"
+                                        aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-lg-6 mb-4">
                         <div class="card shadow mb-4">
-                            <div class="card-header py-3"><h6 class="m-0 font-weight-bold text-primary">تحلیل هوشمند عملکرد سبد سرمایه</h6></div>
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">تحلیل هوشمند عملکرد سبد سرمایه</h6>
+                            </div>
                             <div class="card-body">
                                 <div class="text-center mt-3 mb-4">
                                     <svg width="220" height="140" viewBox="0 0 220 140" fill="none">
-                                        <rect x="0" y="0" width="220" height="140" rx="14" fill="#f4f2ff"/>
-                                        <polyline points="20,100 55,80 90,95 125,55 160,65 200,30" fill="none" stroke="#6c5ce7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                                        <circle cx="200" cy="30" r="5" fill="#6c5ce7"/>
+                                        <rect x="0" y="0" width="220" height="140" rx="14" fill="#f4f2ff" />
+                                        <polyline points="20,100 55,80 90,95 125,55 160,65 200,30" fill="none"
+                                            stroke="#6c5ce7" stroke-width="3" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <circle cx="200" cy="30" r="5" fill="#6c5ce7" />
                                     </svg>
                                 </div>
-                                <p>عملکرد سبد در این دوره مثبت ارزیابی می‌شود. بررسی داده‌های اخیر نشان می‌دهد سبد سرمایه در یک روند صعودی با نوسانات کنترل‌شده قرار دارد. با حفظ شرایط فعلی، چشم‌انداز کوتاه‌مدت مثبت است؛ با این حال برای کاهش ریسک، تنوع‌بخشی به سبد سرمایه و پایش مستمر تغییرات بازار توصیه می‌شود.</p>
+                                <p>عملکرد سبد در این دوره مثبت ارزیابی می‌شود. بررسی داده‌های اخیر نشان می‌دهد سبد
+                                    سرمایه در یک روند صعودی با نوسانات کنترل‌شده قرار دارد. با حفظ شرایط فعلی، چشم‌انداز
+                                    کوتاه‌مدت مثبت است؛ با این حال برای کاهش ریسک، تنوع‌بخشی به سبد سرمایه و پایش مستمر
+                                    تغییرات بازار توصیه می‌شود.</p>
                             </div>
                         </div>
                     </div>
@@ -631,21 +1377,28 @@
 
                     <div>
                         <h3 class="ramzino-glassfooter-col-title"><i class="fas fa-phone"></i>شماره تماس</h3>
-                        <a class="ramzino-glassfooter-item" href="tel:+982188889999"><i class="fas fa-phone-volume"></i> ۰۲۱-۸۸۸۸۹۹۹۹</a>
-                        <a class="ramzino-glassfooter-item" href="tel:+989120000000"><i class="fas fa-mobile-screen-button"></i> ۰۹۱۲-۰۰۰۰۰۰۰</a>
+                        <a class="ramzino-glassfooter-item" href="tel:+982188889999"><i class="fas fa-phone-volume"></i>
+                            ۰۲۱-۸۸۸۸۹۹۹۹</a>
+                        <a class="ramzino-glassfooter-item" href="tel:+989120000000"><i
+                                class="fas fa-mobile-screen-button"></i> ۰۹۱۲-۰۰۰۰۰۰۰</a>
                     </div>
 
                     <div>
                         <h3 class="ramzino-glassfooter-col-title"><i class="fas fa-envelope"></i>ایمیل و آدرس</h3>
-                        <a class="ramzino-glassfooter-item" href="mailto:support@ramzino.ir"><i class="fas fa-at"></i> support@ramzino.ir</a>
-                        <a class="ramzino-glassfooter-item" href="https://maps.google.com/?q=Tehran" target="_blank" rel="noopener"><i class="fas fa-location-dot"></i> تهران، خیابان ولیعصر، مشاهده روی گوگل‌مپ</a>
+                        <a class="ramzino-glassfooter-item" href="mailto:support@ramzino.ir"><i class="fas fa-at"></i>
+                            support@ramzino.ir</a>
+                        <a class="ramzino-glassfooter-item" href="https://maps.google.com/?q=Tehran" target="_blank"
+                            rel="noopener"><i class="fas fa-location-dot"></i> تهران، خیابان ولیعصر، مشاهده روی
+                            گوگل‌مپ</a>
                     </div>
 
                     <div>
                         <h3 class="ramzino-glassfooter-col-title"><i class="fas fa-headset"></i>پشتیبانی آنلاین</h3>
-                        <span class="ramzino-glassfooter-support-status"><span class="ramzino-glassfooter-support-dot"></span> پاسخگو ۲۴ ساعته</span>
+                        <span class="ramzino-glassfooter-support-status"><span
+                                class="ramzino-glassfooter-support-dot"></span> پاسخگو ۲۴ ساعته</span>
                         <br>
-                        <button class="ramzino-glassfooter-chat-btn" type="button" onclick="alert('چت پشتیبانی به‌زودی فعال می‌شود')">
+                        <button class="ramzino-glassfooter-chat-btn" type="button"
+                            onclick="alert('چت پشتیبانی به‌زودی فعال می‌شود')">
                             <i class="fas fa-comment-dots"></i> شروع گفتگو
                         </button>
                     </div>
@@ -666,12 +1419,14 @@
     <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="logoutModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="logoutModalLabel">می‌خواهید خارج شوید؟</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="بستن"><span aria-hidden="true">×</span></button>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="بستن"><span
+                            aria-hidden="true">×</span></button>
                 </div>
                 <div class="modal-body">در صورت تمایل به پایان جلسه فعلی، گزینه «خروج» را انتخاب کنید.</div>
                 <div class="modal-footer">
@@ -791,8 +1546,8 @@
         let ramzinoShowingMore = false;
 
         function ramzinoToFarsiDigits(str) {
-            const en = ['0','1','2','3','4','5','6','7','8','9'];
-            const fa = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
+            const en = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+            const fa = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
             return String(str).replace(/[0-9]/g, d => fa[en.indexOf(d)]);
         }
         function ramzinoFormatToman(n) { return n.toLocaleString('en-US'); }
