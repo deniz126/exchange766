@@ -1,139 +1,252 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="ورود به رمزینو">
+    <title>ورود | رمزینو</title>
 
-    <title>SB Admin 2 - Login</title>
+    <!-- Apply saved theme immediately, before first paint -->
+    <script>
+        (function () {
+            var t = localStorage.getItem('ramzino-theme') || 'light';
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
 
-    <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Custom styles for this template-->
-    <link href="/sb-admin-2.css" rel="stylesheet">
-
-</head>
-
-<body class="bg-gradient-primary">
-
-    <div class="container">
-
-        <!-- Outer Row -->
-        <div class="row justify-content-center">
-
-            <div class="col-xl-10 col-lg-12 col-md-9">
-
-                <div class="card o-hidden border-0 shadow-lg my-5">
-                    <div class="card-body p-0">
-                        <!-- Nested Row within Card Body -->
-                        <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-                            <div class="col-lg-6">
-                                <div class="p-5">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
-                                    </div>
-                                    <form class="user">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                                id="exampleInputEmail" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="exampleInputPassword" placeholder="Password">
-                                        </div>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck">
-                                                <label class="custom-control-label" for="customCheck">Remember
-                                                    Me</label>
-                                            </div>
-                                        </div>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
-                                            Login
-                                        </a>
-                                        <hr>
-                                        <a href="index.html" class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Login with Google
-                                        </a>
-                                        <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                            <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                                        </a>
-                                    </form>
-                                    <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="small" href="register.html">Create an Account!</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
     <style>
-        .body {
-            min-height: 100vh;
-            background:
-                radial-gradient(circle at 12% 8%, rgba(108, 92, 231, .16) 0%, transparent 38%),
-                radial-gradient(circle at 90% 4%, rgba(22, 163, 74, .14) 0%, transparent 40%),
-                radial-gradient(circle at 80% 95%, rgba(108, 92, 231, .12) 0%, transparent 45%),
-                linear-gradient(180deg, #f4f5f9 0%, #eef0f4 100%);
-            background-attachment: fixed;
-            display: flex;
-            flex-direction: column;
-        }
-
-
         :root {
             --ramzino-ink: #111318;
             --ramzino-ink-soft: #5b6270;
             --ramzino-violet: #6c5ce7;
             --ramzino-violet-dark: #5b4bd6;
             --ramzino-violet-tint: #f4f2ff;
-            --ramzino-green: #16a34a;
-            --ramzino-red: #dc2626;
             --ramzino-hairline: #eef0f3;
             --ramzino-glass-bg: rgba(255, 255, 255, 0.62);
             --ramzino-glass-border: rgba(255, 255, 255, 0.55);
         }
-
-        * {
-            box-sizing: border-box;
+        [data-theme="dark"] {
+            --ramzino-ink: #eef0f6;
+            --ramzino-ink-soft: #a3a9bd;
+            --ramzino-violet-tint: #2a2540;
+            --ramzino-hairline: rgba(255, 255, 255, .08);
+            --ramzino-glass-bg: rgba(28, 29, 38, .55);
+            --ramzino-glass-border: rgba(255, 255, 255, .08);
         }
 
+        * { box-sizing: border-box; }
+        html, body { height: 100%; }
         body {
-            font-family: 'Vazirmatn', 'Nunito', Tahoma, sans-serif;
+            margin: 0;
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
             color: var(--ramzino-ink);
+            transition: background-color .25s ease, color .25s ease;
         }
+
+        .ramzino-login-bg {
+            min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            padding: 24px;
+            background:
+                radial-gradient(circle at 12% 8%, rgba(108, 92, 231, .18) 0%, transparent 40%),
+                radial-gradient(circle at 90% 10%, rgba(22, 163, 74, .14) 0%, transparent 42%),
+                radial-gradient(circle at 75% 90%, rgba(108, 92, 231, .14) 0%, transparent 45%),
+                linear-gradient(180deg, #f4f5f9 0%, #eef0f4 100%);
+            transition: background .25s ease;
+        }
+        [data-theme="dark"] .ramzino-login-bg {
+            background:
+                radial-gradient(circle at 12% 8%, rgba(108, 92, 231, .24) 0%, transparent 40%),
+                radial-gradient(circle at 90% 10%, rgba(22, 163, 74, .16) 0%, transparent 42%),
+                radial-gradient(circle at 75% 90%, rgba(108, 92, 231, .18) 0%, transparent 45%),
+                linear-gradient(180deg, #14151c 0%, #0f1015 100%);
+        }
+
+        .ramzino-theme-fab {
+            position: fixed; top: 20px; left: 20px; z-index: 10;
+            width: 42px; height: 42px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(255,255,255,.6); border: 1px solid rgba(17,19,24,.08);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            color: var(--ramzino-ink); cursor: pointer; transition: transform .15s ease;
+        }
+        .ramzino-theme-fab:hover { transform: scale(1.08); }
+        [data-theme="dark"] .ramzino-theme-fab { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.1); }
+
+        .ramzino-login-card {
+            width: 100%; max-width: 400px;
+            background: var(--ramzino-glass-bg);
+            border: 1px solid var(--ramzino-glass-border);
+            -webkit-backdrop-filter: blur(22px) saturate(160%);
+            backdrop-filter: blur(22px) saturate(160%);
+            border-radius: 26px;
+            box-shadow: 0 24px 60px rgba(20,20,40,.16), 0 6px 16px rgba(20,20,40,.06);
+            padding: 34px 30px 30px;
+        }
+
+        .ramzino-login-brand {
+            display: flex; flex-direction: column; align-items: center; gap: 10px;
+            margin-bottom: 22px; text-decoration: none;
+        }
+        .ramzino-login-brand-icon {
+            width: 46px; height: 46px; border-radius: 14px;
+            background: var(--ramzino-violet); color: #fff;
+            display: flex; align-items: center; justify-content: center; font-size: 20px;
+        }
+        .ramzino-login-brand-name { font-size: 19px; font-weight: 800; color: var(--ramzino-ink); }
+
+        .ramzino-login-heading { text-align: center; font-size: 20px; font-weight: 800; margin: 0 0 4px; }
+        .ramzino-login-sub { text-align: center; font-size: 13.5px; color: var(--ramzino-ink-soft); margin: 0 0 26px; }
+
+        .ramzino-field { margin-bottom: 16px; }
+        .ramzino-field label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 7px; color: var(--ramzino-ink); }
+        .ramzino-field-input {
+            width: 100%; padding: 12px 14px; border-radius: 12px;
+            border: 1px solid rgba(17,19,24,.10); background: rgba(255,255,255,.7);
+            font-family: inherit; font-size: 14px; color: var(--ramzino-ink); outline: none;
+            transition: border-color .15s ease, background .15s ease;
+        }
+        .ramzino-field-input:focus { border-color: var(--ramzino-violet); background: #fff; }
+        [data-theme="dark"] .ramzino-field-input { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.1); color: var(--ramzino-ink); }
+        [data-theme="dark"] .ramzino-field-input:focus { background: rgba(255,255,255,.08); }
+
+        .ramzino-login-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; font-size: 13px; }
+        .ramzino-remember { display: flex; align-items: center; gap: 7px; color: var(--ramzino-ink-soft); cursor: pointer; user-select: none; }
+        .ramzino-remember input { width: 16px; height: 16px; accent-color: var(--ramzino-violet); cursor: pointer; }
+        .ramzino-forgot { color: var(--ramzino-violet); text-decoration: none; }
+        .ramzino-forgot:hover { text-decoration: underline; }
+
+        .ramzino-login-submit {
+            width: 100%; padding: 13px; border: none; border-radius: 12px;
+            background: var(--ramzino-violet); color: #fff;
+            font-family: inherit; font-size: 15px; font-weight: 700; cursor: pointer;
+            transition: background .15s ease, transform .1s ease;
+        }
+        .ramzino-login-submit:hover { background: var(--ramzino-violet-dark); }
+        .ramzino-login-submit:active { transform: scale(.98); }
+
+        .ramzino-divider { display: flex; align-items: center; gap: 12px; margin: 24px 0 18px; font-size: 12.5px; color: var(--ramzino-ink-soft); }
+        .ramzino-divider::before, .ramzino-divider::after { content: ""; flex: 1; height: 1px; background: var(--ramzino-hairline); }
+
+        .ramzino-social-stack { display: flex; flex-direction: column; gap: 10px; }
+        .ramzino-social-btn {
+            display: flex; align-items: center; justify-content: center; gap: 10px;
+            width: 100%; padding: 11px; border-radius: 12px;
+            border: 1px solid rgba(17,19,24,.10); background: rgba(255,255,255,.7);
+            font-family: inherit; font-size: 14px; font-weight: 600; color: var(--ramzino-ink);
+            cursor: pointer; text-decoration: none; transition: background .15s ease, transform .12s ease, box-shadow .15s ease;
+        }
+        .ramzino-social-btn:hover { background: #fff; box-shadow: 0 6px 16px rgba(20,20,40,.08); text-decoration: none; color: var(--ramzino-ink); transform: translateY(-1px); }
+        [data-theme="dark"] .ramzino-social-btn { background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.1); color: var(--ramzino-ink); }
+        [data-theme="dark"] .ramzino-social-btn:hover { background: rgba(255,255,255,.09); }
+        .ramzino-social-btn i.fa-google { color: #ea4335; }
+        .ramzino-social-btn i.fa-apple { color: var(--ramzino-ink); }
+        .ramzino-social-btn i.fa-facebook { color: #1877f2; }
+
+        .ramzino-login-footer { text-align: center; margin-top: 22px; font-size: 13px; color: var(--ramzino-ink-soft); }
+        .ramzino-login-footer a { color: var(--ramzino-violet); text-decoration: none; font-weight: 600; }
+        .ramzino-login-footer a:hover { text-decoration: underline; }
+
+        .ramzino-back-link {
+            display: inline-flex; align-items: center; gap: 6px;
+            font-size: 13px; color: var(--ramzino-ink-soft); text-decoration: none; margin-bottom: 18px;
+        }
+        .ramzino-back-link:hover { color: var(--ramzino-violet); }
     </style>
+</head>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<body>
 
-    <!-- Core plugin JavaScript-->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <button class="ramzino-theme-fab" id="ramzinoThemeToggle" title="حالت شب/روز" onclick="ramzinoToggleTheme()">
+        <i class="fas fa-moon" id="ramzinoThemeIcon"></i>
+    </button>
 
-    <!-- Custom scripts for all pages-->
-    <script src="js/sb-admin-2.js"></script>
+    <div class="ramzino-login-bg">
+        <div class="ramzino-login-card">
+
+            <a href="index.html" class="ramzino-back-link">
+                <i class="fas fa-arrow-right"></i> بازگشت به داشبورد
+            </a>
+
+            <a href="index.html" class="ramzino-login-brand">
+                <span class="ramzino-login-brand-icon"><i class="fas fa-bolt"></i></span>
+                <span class="ramzino-login-brand-name">رمزینو</span>
+            </a>
+
+            <h1 class="ramzino-login-heading">خوش آمدید</h1>
+            <p class="ramzino-login-sub">برای ادامه وارد حساب کاربری خود شوید</p>
+
+            <form onsubmit="return ramzinoHandleLogin(event)">
+                <div class="ramzino-field">
+                    <label for="ramzinoEmail">ایمیل یا شماره موبایل</label>
+                    <input class="ramzino-field-input" type="text" id="ramzinoEmail" placeholder="example@ramzino.ir" required>
+                </div>
+                <div class="ramzino-field">
+                    <label for="ramzinoPassword">رمز عبور</label>
+                    <input class="ramzino-field-input" type="password" id="ramzinoPassword" placeholder="••••••••" required>
+                </div>
+
+                <div class="ramzino-login-row">
+                    <label class="ramzino-remember">
+                        <input type="checkbox" id="ramzinoRemember">
+                        مرا به خاطر بسپار
+                    </label>
+                    <a href="#" class="ramzino-forgot">فراموشی رمز عبور؟</a>
+                </div>
+
+                <button type="submit" class="ramzino-login-submit">ورود</button>
+            </form>
+
+            <div class="ramzino-divider">یا ورود با</div>
+
+            <div class="ramzino-social-stack">
+                <button type="button" class="ramzino-social-btn" onclick="ramzinoSocialLogin('گوگل')">
+                    <i class="fab fa-google"></i> ورود با اکانت گوگل
+                </button>
+                <button type="button" class="ramzino-social-btn" onclick="ramzinoSocialLogin('اپل')">
+                    <i class="fab fa-apple"></i> ورود با اکانت اپل
+                </button>
+                <button type="button" class="ramzino-social-btn" onclick="ramzinoSocialLogin('فیسبوک')">
+                    <i class="fab fa-facebook"></i> ورود با اکانت فیسبوک
+                </button>
+            </div>
+
+            <div class="ramzino-login-footer">
+                حساب کاربری ندارید؟ <a href="#">ثبت‌نام کنید</a>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function ramzinoUpdateThemeIcon() {
+            var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            var icon = document.getElementById('ramzinoThemeIcon');
+            if (icon) icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+        }
+        function ramzinoToggleTheme() {
+            var current = document.documentElement.getAttribute('data-theme') || 'light';
+            var next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('ramzino-theme', next);
+            ramzinoUpdateThemeIcon();
+        }
+        ramzinoUpdateThemeIcon();
+
+        function ramzinoHandleLogin(e) {
+            e.preventDefault();
+            alert('ورود با موفقیت انجام شد (نمونه دمو)');
+            return false;
+        }
+        function ramzinoSocialLogin(provider) {
+            alert('ورود با ' + provider + ' (نمونه دمو)');
+        }
+    </script>
 
 </body>
-
 </html>
