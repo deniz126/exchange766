@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="چت با دستیار هوشمند رمزینو">
+    <title>دستیار هوشمند | رمزینو</title>
+
+    <script>
+        (function () {
+            var t = localStorage.getItem('ramzino-theme') || 'light';
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --ramzino-ink: #111318;
+            --ramzino-ink-soft: #5b6270;
+            --ramzino-violet: #6c5ce7;
+            --ramzino-violet-dark: #5b4bd6;
+            --ramzino-violet-tint: #f4f2ff;
+            --ramzino-hairline: #eef0f3;
+            --ramzino-glass-bg: rgba(255, 255, 255, 0.62);
+            --ramzino-glass-border: rgba(255, 255, 255, 0.55);
+            --ramzino-bubble-ai: #ffffff;
+        }
+        [data-theme="dark"] {
+            --ramzino-ink: #eef0f6;
+            --ramzino-ink-soft: #a3a9bd;
+            --ramzino-violet-tint: #2a2540;
+            --ramzino-hairline: rgba(255, 255, 255, .08);
+            --ramzino-glass-bg: rgba(28, 29, 38, .55);
+            --ramzino-glass-border: rgba(255, 255, 255, .08);
+            --ramzino-bubble-ai: #1c1d26;
+        }
+
+        * { box-sizing: border-box; }
+        html, body { height: 100%; }
+        body {
+            margin: 0;
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            color: var(--ramzino-ink);
+            transition: background-color .25s ease, color .25s ease;
+        }
+
+        .ramzino-chat-bg {
+            min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            padding: 20px;
+            background:
+                radial-gradient(circle at 12% 8%, rgba(108, 92, 231, .18) 0%, transparent 40%),
+                radial-gradient(circle at 90% 10%, rgba(22, 163, 74, .14) 0%, transparent 42%),
+                radial-gradient(circle at 75% 90%, rgba(108, 92, 231, .14) 0%, transparent 45%),
+                linear-gradient(180deg, #f4f5f9 0%, #eef0f4 100%);
+            transition: background .25s ease;
+        }
+        [data-theme="dark"] .ramzino-chat-bg {
+            background:
+                radial-gradient(circle at 12% 8%, rgba(108, 92, 231, .24) 0%, transparent 40%),
+                radial-gradient(circle at 90% 10%, rgba(22, 163, 74, .16) 0%, transparent 42%),
+                radial-gradient(circle at 75% 90%, rgba(108, 92, 231, .18) 0%, transparent 45%),
+                linear-gradient(180deg, #14151c 0%, #0f1015 100%);
+        }
+
+        .ramzino-chat-panel {
+            width: 100%; max-width: 560px; height: min(720px, 92vh);
+            background: var(--ramzino-glass-bg);
+            border: 1px solid var(--ramzino-glass-border);
+            -webkit-backdrop-filter: blur(22px) saturate(160%);
+            backdrop-filter: blur(22px) saturate(160%);
+            border-radius: 26px;
+            box-shadow: 0 24px 60px rgba(20,20,40,.16), 0 6px 16px rgba(20,20,40,.06);
+            display: flex; flex-direction: column; overflow: hidden;
+        }
+
+        .ramzino-chat-header {
+            display: flex; align-items: center; gap: 12px;
+            padding: 16px 18px; border-bottom: 1px solid var(--ramzino-hairline);
+            flex-shrink: 0;
+        }
+        .ramzino-chat-back {
+            width: 34px; height: 34px; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(17,19,24,.05); color: var(--ramzino-ink); text-decoration: none; flex-shrink: 0;
+        }
+        [data-theme="dark"] .ramzino-chat-back { background: rgba(255,255,255,.06); }
+        .ramzino-chat-avatar {
+            width: 40px; height: 40px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--ramzino-violet), #16a34a);
+            color: #fff; display: flex; align-items: center; justify-content: center; font-size: 17px; flex-shrink: 0;
+        }
+        .ramzino-chat-title { font-weight: 700; font-size: 15px; }
+        .ramzino-chat-status { font-size: 12px; color: #16a34a; display: flex; align-items: center; gap: 5px; }
+        .ramzino-chat-status-dot { width: 7px; height: 7px; border-radius: 50%; background: #16a34a; }
+        .ramzino-chat-theme-btn {
+            margin-right: auto; width: 34px; height: 34px; border-radius: 50%; border: none;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(17,19,24,.05); color: var(--ramzino-ink); cursor: pointer;
+        }
+        [data-theme="dark"] .ramzino-chat-theme-btn { background: rgba(255,255,255,.06); }
+
+        .ramzino-chat-body {
+            flex: 1; overflow-y: auto; padding: 20px 16px; display: flex; flex-direction: column; gap: 12px;
+        }
+
+        .ramzino-msg-row { display: flex; }
+        .ramzino-msg-row.ramzino-ai { justify-content: flex-end; }
+        .ramzino-msg-row.ramzino-user { justify-content: flex-start; }
+
+        .ramzino-msg-bubble {
+            max-width: 80%; padding: 12px 15px; border-radius: 16px;
+            font-size: 14px; line-height: 1.85;
+        }
+        .ramzino-msg-row.ramzino-ai .ramzino-msg-bubble {
+            background: var(--ramzino-bubble-ai); color: var(--ramzino-ink);
+            border: 1px solid var(--ramzino-hairline);
+            border-bottom-left-radius: 4px;
+        }
+        .ramzino-msg-row.ramzino-user .ramzino-msg-bubble {
+            background: var(--ramzino-violet); color: #fff;
+            border-bottom-right-radius: 4px;
+        }
+
+        .ramzino-typing { display: flex; gap: 4px; padding: 4px 2px; }
+        .ramzino-typing span {
+            width: 6px; height: 6px; border-radius: 50%; background: var(--ramzino-ink-soft);
+            animation: ramzinoTypingBounce 1.2s infinite ease-in-out;
+        }
+        .ramzino-typing span:nth-child(2) { animation-delay: .15s; }
+        .ramzino-typing span:nth-child(3) { animation-delay: .3s; }
+        @keyframes ramzinoTypingBounce { 0%, 60%, 100% { transform: translateY(0); opacity: .4; } 30% { transform: translateY(-4px); opacity: 1; } }
+
+        .ramzino-chat-suggestions {
+            padding: 12px 16px 18px; border-top: 1px solid var(--ramzino-hairline);
+            display: flex; flex-wrap: wrap; gap: 8px; flex-shrink: 0;
+        }
+        .ramzino-chip {
+            border: 1px solid var(--ramzino-hairline); background: rgba(255,255,255,.6);
+            color: var(--ramzino-ink); font-family: inherit; font-size: 12.5px; font-weight: 500;
+            padding: 9px 14px; border-radius: 999px; cursor: pointer;
+            transition: background .15s ease, border-color .15s ease, transform .12s ease;
+        }
+        [data-theme="dark"] .ramzino-chip { background: rgba(255,255,255,.05); }
+        .ramzino-chip:hover { background: var(--ramzino-violet-tint); border-color: var(--ramzino-violet); color: var(--ramzino-violet); transform: translateY(-1px); }
+        .ramzino-chip.ramzino-chip-reset { border-color: var(--ramzino-violet); color: var(--ramzino-violet); }
+
+        .ramzino-chat-body::-webkit-scrollbar { width: 6px; }
+        .ramzino-chat-body::-webkit-scrollbar-thumb { background: rgba(17,19,24,.15); border-radius: 10px; }
+    </style>
+</head>
+
+<body>
+
+    <div class="ramzino-chat-bg">
+        <div class="ramzino-chat-panel">
+
+            <div class="ramzino-chat-header">
+                <a href="index.html" class="ramzino-chat-back"><i class="fas fa-arrow-right"></i></a>
+                <div class="ramzino-chat-avatar"><i class="fas fa-robot"></i></div>
+                <div>
+                    <div class="ramzino-chat-title">دستیار هوشمند رمزینو</div>
+                    <div class="ramzino-chat-status"><span class="ramzino-chat-status-dot"></span> آنلاین</div>
+                </div>
+                <button class="ramzino-chat-theme-btn" id="ramzinoThemeToggle" title="حالت شب/روز" onclick="ramzinoToggleTheme()">
+                    <i class="fas fa-moon" id="ramzinoThemeIcon"></i>
+                </button>
+            </div>
+
+            <div class="ramzino-chat-body" id="ramzinoChatBody"></div>
+
+            <div class="ramzino-chat-suggestions" id="ramzinoChatSuggestions"></div>
+
+        </div>
+    </div>
+
+    <script>
+        /* ---------- theme ---------- */
+        function ramzinoUpdateThemeIcon() {
+            var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            var icon = document.getElementById('ramzinoThemeIcon');
+            if (icon) icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+        }
+        function ramzinoToggleTheme() {
+            var current = document.documentElement.getAttribute('data-theme') || 'light';
+            var next = current === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', next);
+            localStorage.setItem('ramzino-theme', next);
+            ramzinoUpdateThemeIcon();
+        }
+        ramzinoUpdateThemeIcon();
+
+        /* ---------- branching predefined Q&A tree ---------- */
+        const ramzinoChatTree = {
+            root: {
+                chips: ["wallet", "fees", "buy", "kyc"]
+            },
+            wallet: {
+                question: "چطور کیف پول دیجیتال بسازم؟",
+                answer: "پس از ثبت‌نام و تکمیل احراز هویت، از منوی «کیف پول» گزینه «ساخت کیف پول جدید» را انتخاب کنید. رمزینو به‌صورت خودکار یک آدرس اختصاصی برای هر رمزارز ایجاد می‌کند.",
+                chips: ["deposit", "withdraw", "root"]
+            },
+            fees: {
+                question: "کارمزد معاملات چقدر است؟",
+                answer: "کارمزد هر معامله بین ۰.۱ تا ۰.۳۵ درصد بسته به حجم و نوع سفارش (بازار یا لیمیت) محاسبه می‌شود. جزئیات کامل در صفحه «تعرفه‌ها» موجود است.",
+                chips: ["buy", "withdraw-fee", "root"]
+            },
+            buy: {
+                question: "چطور می‌توانم رمزارز بخرم؟",
+                answer: "از بخش «خرید و فروش سریع» می‌توانید موجودی تومانی خود را با نرخ لحظه‌ای مستقیماً به بیت‌کوین، اتریوم یا هر رمزارز دیگر تبدیل کنید.",
+                chips: ["fees", "wallet", "root"]
+            },
+            kyc: {
+                question: "احراز هویت چقدر طول می‌کشد؟",
+                answer: "معمولاً بررسی مدارک هویتی توسط تیم پشتیبانی رمزینو بین ۱۵ دقیقه تا ۲۴ ساعت کاری زمان می‌برد و نتیجه از طریق پیامک اطلاع داده می‌شود.",
+                chips: ["support", "buy", "root"]
+            },
+            deposit: {
+                question: "چطور به کیف پولم واریز کنم؟",
+                answer: "از صفحه کیف پول، گزینه «واریز» را بزنید، رمزارز موردنظر را انتخاب کنید و آدرس نمایش داده‌شده را برای ارسال از کیف پول دیگر استفاده کنید.",
+                chips: ["withdraw", "root"]
+            },
+            withdraw: {
+                question: "برداشت رمزارز چطور انجام می‌شود؟",
+                answer: "از صفحه کیف پول، گزینه «برداشت» را بزنید، آدرس مقصد را وارد کنید و مبلغ را مشخص کنید. تراکنش پس از تایید شبکه بلاکچین نهایی می‌شود.",
+                chips: ["withdraw-fee", "root"]
+            },
+            "withdraw-fee": {
+                question: "کارمزد برداشت چقدر است؟",
+                answer: "کارمزد برداشت بسته به شبکه انتخابی متفاوت است و پیش از تایید نهایی تراکنش به‌صورت شفاف به شما نمایش داده می‌شود.",
+                chips: ["root"]
+            },
+            support: {
+                question: "پشتیبانی چه ساعاتی پاسخگوست؟",
+                answer: "تیم پشتیبانی رمزینو به‌صورت ۲۴ ساعته و هفت روز هفته از طریق همین چت و تیکت در دسترس شماست.",
+                chips: ["root"]
+            }
+        };
+
+        const ramzinoChipLabels = {
+            wallet: "چطور کیف پول بسازم؟",
+            fees: "کارمزد معاملات چقدره؟",
+            buy: "چطور رمزارز بخرم؟",
+            kyc: "احراز هویت چقدر طول می‌کشه؟",
+            deposit: "چطور واریز کنم؟",
+            withdraw: "چطور برداشت کنم؟",
+            "withdraw-fee": "کارمزد برداشت چقدره؟",
+            support: "پشتیبانی چه ساعاتی پاسخگوست؟",
+            root: "↻ بازگشت به سوالات اصلی"
+        };
+
+        const chatBody = document.getElementById('ramzinoChatBody');
+        const chatSuggestions = document.getElementById('ramzinoChatSuggestions');
+
+        function ramzinoAddMessage(text, sender) {
+            const row = document.createElement('div');
+            row.className = 'ramzino-msg-row ramzino-' + sender;
+            row.innerHTML = `<div class="ramzino-msg-bubble">${text}</div>`;
+            chatBody.appendChild(row);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function ramzinoShowTyping() {
+            const row = document.createElement('div');
+            row.className = 'ramzino-msg-row ramzino-ai';
+            row.id = 'ramzinoTypingRow';
+            row.innerHTML = `<div class="ramzino-msg-bubble"><div class="ramzino-typing"><span></span><span></span><span></span></div></div>`;
+            chatBody.appendChild(row);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function ramzinoRenderChips(keys) {
+            chatSuggestions.innerHTML = keys.map(key => {
+                const cls = key === 'root' ? 'ramzino-chip ramzino-chip-reset' : 'ramzino-chip';
+                return `<button type="button" class="${cls}" onclick="ramzinoAskQuestion('${key}')">${ramzinoChipLabels[key]}</button>`;
+            }).join('');
+        }
+
+        function ramzinoAskQuestion(key) {
+            if (key === 'root') {
+                ramzinoRenderChips(ramzinoChatTree.root.chips);
+                return;
+            }
+            const node = ramzinoChatTree[key];
+            if (!node) return;
+
+            ramzinoAddMessage(node.question, 'user');
+            chatSuggestions.innerHTML = '';
+            ramzinoShowTyping();
+
+            setTimeout(() => {
+                const typingRow = document.getElementById('ramzinoTypingRow');
+                if (typingRow) typingRow.remove();
+                ramzinoAddMessage(node.answer, 'ai');
+                ramzinoRenderChips(node.chips);
+            }, 900);
+        }
+
+        // initial greeting
+        ramzinoAddMessage('سلام 👋 من دستیار هوشمند رمزینو هستم. یکی از سوالات زیر رو انتخاب کن تا کمکت کنم:', 'ai');
+        ramzinoRenderChips(ramzinoChatTree.root.chips);
+    </script>
+
+</body>
+</html>
