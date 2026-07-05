@@ -409,8 +409,9 @@
         .ramzino-glassnav-wrap {
             position: sticky;
             top: 16px;
-          
-          
+            z-index: 1030;
+            display: flex;
+            justify-content: center;
             padding: 0 16px;
             margin-bottom: 28px;
         }
@@ -517,7 +518,11 @@
             color: var(--ramzino-ink-soft);
         }
 
-  
+        @media (max-width: 768px) {
+            .ramzino-glassnav-search {
+                display: none !important;
+            }
+        }
 
   
         /* ============================================================
